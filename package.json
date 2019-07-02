@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "nikek",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
   }
