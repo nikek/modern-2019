@@ -1,20 +1,23 @@
 import React from 'react';
-import { A } from 'hookrouter';
+import styled from 'styled-components';
+import { A, usePath } from 'hookrouter';
 
-const styles = {
-  color: '#d5d',
-  margin: 10,
-};
+const NavA = styled(A)`
+  color: ${p => (p.current === p.href ? 'teal' : '#d5d')};
+  text-decoration: ${p => (p.current === p.href ? 'none' : 'undeline')};
+  margin: 10px;
+`;
 
-export default function Nav() {
+export default function Nav(p) {
+  const path = usePath();
   return (
     <nav>
-      <A style={styles} href="/">
+      <NavA href="/" current={path}>
         Home
-      </A>
-      <A style={styles} href="about">
+      </NavA>
+      <NavA href="/about" current={path}>
         About
-      </A>
+      </NavA>
     </nav>
   );
 }
