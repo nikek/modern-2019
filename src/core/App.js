@@ -21,10 +21,15 @@ const routes = {
 const Router = () => useRoutes(routes) || 'nothing here';
 
 export default function App() {
+  const [color, setColor] = React.useState('papayawhip');
+
+  const click = () => setColor(color === 'papayawhip' ? 'teal' : 'papayawhip');
+
   return (
     <div style={styles}>
       <h1>App is alive</h1>
-      <Nav />
+      <Nav color={color} />
+      <button onClick={click}>teal!</button>
       <Router />
     </div>
   );

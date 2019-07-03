@@ -1,18 +1,26 @@
 import React from 'react';
+import { css } from 'emotion';
 import { A } from 'hookrouter';
 
-const styles = {
-  color: '#d5d',
-  margin: 10,
-};
+const Anchor = styled('a')`
+  color: gray;
+`;
 
-export default function Nav() {
+export default function Nav(p) {
+  const styles = css`
+    color: #d5d;
+    margin: 10px;
+    &:hover {
+      color: ${p.color || 'lightblue'};
+    }
+  `;
+
   return (
     <nav>
-      <A style={styles} href="/">
+      <A className={styles} href="/">
         Home
       </A>
-      <A style={styles} href="about">
+      <A className={styles} href="about">
         About
       </A>
     </nav>
