@@ -1,18 +1,22 @@
 import React from 'react';
 import { A } from 'hookrouter';
+import { makeStyles } from '@material-ui/styles';
 
-const styles = {
-  color: '#d5d',
-  margin: 10,
-};
+const useStyle = makeStyles({
+  link: {
+    color: '#d5d',
+    margin: props => props.margin,
+  },
+});
 
 export default function Nav() {
+  const classes = useStyle({ margin: 100 });
   return (
     <nav>
-      <A style={styles} href="/">
+      <A className={classes.link} href="/">
         Home
       </A>
-      <A style={styles} href="about">
+      <A className={classes.link} href="about">
         About
       </A>
     </nav>

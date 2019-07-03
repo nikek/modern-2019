@@ -10,11 +10,7 @@ Awesome tools combined for the current time
   https://github.com/Paratron/hookrouter
 - Styling - emotion
   emotion styled components and makeStyles -> useStyle hook
-- Bundling - TBD
-  - webpack
-  - cra
-  - parcel
-  - pika
+- Bundling - parcel
 
 ## General preferences
 
