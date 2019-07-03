@@ -1,15 +1,14 @@
 import React from 'react';
-import Nav from '/core/Nav';
+import Nav from './Nav';
 import HomePage from '/plugins/home/HomePage';
 import AboutPage from '/plugins/about/AboutPage';
 import { useRoutes } from 'hookrouter';
+import routeManager from '../routeManager';
 
-const routes = {
-  '/': () => <HomePage />,
-  '/about': () => <AboutPage />,
-};
+routeManager.registerRoute('/', () => <HomePage />);
+routeManager.registerRoute('/about', () => <AboutPage />);
 
-const Router = () => useRoutes(routes) || 'nothing here';
+const Router = () => useRoutes(routeManager.routes) || 'nothing here';
 
 export default function App() {
   return (
