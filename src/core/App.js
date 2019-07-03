@@ -1,15 +1,16 @@
 import React from 'react';
+import { css } from 'emotion';
 import Nav from '/core/Nav';
 import HomePage from '/plugins/home/HomePage';
 import AboutPage from '/plugins/about/AboutPage';
 
-const styles = {
-  height: '100vh',
-  width: '100vw',
-  backgroundColor: '#333',
-  fontFamily: 'sans-serif',
-  color: '#ddd',
-};
+const styles = css`
+  height: 100vh;
+  width: 100vw;
+  background-color: #333;
+  font-family: sans-serif;
+  color: #ddd;
+`;
 
 import { useRoutes } from 'hookrouter';
 
@@ -21,15 +22,10 @@ const routes = {
 const Router = () => useRoutes(routes) || 'nothing here';
 
 export default function App() {
-  const [color, setColor] = React.useState('papayawhip');
-
-  const click = () => setColor(color === 'papayawhip' ? 'teal' : 'papayawhip');
-
   return (
-    <div style={styles}>
+    <div className={styles}>
       <h1>App is alive</h1>
-      <Nav color={color} />
-      <button onClick={click}>teal!</button>
+      <Nav />
       <Router />
     </div>
   );

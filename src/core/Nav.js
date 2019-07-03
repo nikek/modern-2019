@@ -1,28 +1,23 @@
 import React from 'react';
-import { css } from 'emotion';
-import { A } from 'hookrouter';
+import styled from '@emotion/styled';
+import { A, usePath } from 'hookrouter';
 
-const Anchor = styled('a')`
-  color: gray;
+const NavA = styled(A)`
+  color: ${p => (p.current === p.href ? 'teal' : '#d5d')};
+  text-decoration: ${p => (p.current === p.href ? 'none' : 'undeline')};
+  margin: 10px;
 `;
 
 export default function Nav(p) {
-  const styles = css`
-    color: #d5d;
-    margin: 10px;
-    &:hover {
-      color: ${p.color || 'lightblue'};
-    }
-  `;
-
+  const path = usePath();
   return (
     <nav>
-      <A className={styles} href="/">
+      <NavA href="/" current={path}>
         Home
-      </A>
-      <A className={styles} href="about">
+      </NavA>
+      <NavA href="/about" current={path}>
         About
-      </A>
+      </NavA>
     </nav>
   );
 }
