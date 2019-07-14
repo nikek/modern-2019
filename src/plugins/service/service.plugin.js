@@ -1,27 +1,17 @@
 import React from 'react';
 import { useRoutes } from 'hookrouter';
+import { makeRoutable } from '/core/router/routeManager';
 
 const ServicePage = React.lazy(() => import('/plugins/service/ServicePage'));
 
-const routes = {};
-
-export default {
+const plugin = makeRoutable({
   init(app) {
     app.registerRoute('/service*', ServicePage);
   },
-  registerRoute(path, Comp) {
-    if (routes[path]) {
-      throw Error('Route path already registered: ', path);
-    }
-    routes[path] = () => (
-      <React.Suspense fallback={'loading'}>
-        <Comp />
-      </React.Suspense>
-    );
-  },
-};
+});
+
+export default plugin;
 
 export const ServiceRouter = () => {
-  console.log(routes);
-  return useRoutes(routes) || 'nothing here';
+  return useRoutes(plugin.routes) || 'nothing here';
 };

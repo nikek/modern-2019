@@ -6,7 +6,6 @@ const ServiceOverviewPage = React.lazy(() =>
 
 export default {
   init(app) {
-    console.log(app);
     app.plugins.service.registerRoute('/', ServiceOverviewPage);
   },
 };

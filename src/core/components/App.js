@@ -1,9 +1,9 @@
 import React from 'react';
 import Nav from './Nav';
 import { useRoutes } from 'hookrouter';
-import routeManager from '/core/router/routeManager';
+import { appContext } from '/';
 
-const Router = () => useRoutes(routeManager.routes) || 'nothing here';
+const Router = () => useRoutes(appContext.routes) || 'nothing here';
 
 export default function App() {
   return (
