@@ -15,6 +15,9 @@ export default function Nav() {
       <A style={styles} href="about">
         About
       </A>
+      <A style={styles} href="service">
+        Service
+      </A>
     </nav>
   );
 }
