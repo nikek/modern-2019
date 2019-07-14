@@ -1,5 +1,7 @@
 import HomePage from './HomePage';
 
-export default function homePlugin(app) {
-  app.registerRoute('/', HomePage);
-}
+export default {
+  init(app) {
+    app.registerRoute('/', HomePage);
+  },
+};

@@ -1,5 +1,11 @@
 import React from 'react';
+import { ServiceRouter } from '/plugins/service/service.plugin';
 
-export default function AboutPage() {
-  return <div>About</div>;
+export default function ServicePage() {
+  return (
+    <div>
+      <h2>Layout</h2>
+      <ServiceRouter />
+    </div>
+  );
 }
