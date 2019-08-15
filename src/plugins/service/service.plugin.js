@@ -13,5 +13,5 @@ const plugin = makeRoutable({
 export default plugin;
 
 export const ServiceRouter = () => {
-  return useRoutes(plugin.routes) || 'nothing here';
+  return useRoutes(plugin.routes) || 'service: nothing here';
 };

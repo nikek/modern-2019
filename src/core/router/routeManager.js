@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const makeRoutable = o => {
+export function makeRoutable(plugin) {
   const routes = {};
-  return Object.assign({}, o, {
+  return Object.assign({}, plugin, {
     routes,
     registerRoute(path, Comp) {
       if (routes[path]) {
@@ -15,4 +15,4 @@ export const makeRoutable = o => {
       );
     },
   });
-};
+}

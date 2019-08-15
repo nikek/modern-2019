@@ -6,17 +6,14 @@ const styles = {
   margin: 10,
 };
 
-export default function Nav() {
+export default function ServiceNav() {
   return (
     <nav>
-      <A style={styles} href="/">
-        Home
-      </A>
-      <A style={styles} href="/about">
-        About
-      </A>
       <A style={styles} href="/service">
-        Service
+        Overview
+      </A>
+      <A style={styles} href="/service/capacity">
+        Capacity
       </A>
     </nav>
   );
