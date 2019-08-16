@@ -18,6 +18,9 @@ export default function Nav() {
       <A style={styles} href="/service">
         Service
       </A>
+      <A style={styles} href="/website">
+        Website
+      </A>
     </nav>
   );
 }

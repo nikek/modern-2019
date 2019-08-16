@@ -1,24 +1,32 @@
 import React from 'react';
-import { useRoutes } from 'hookrouter';
+import { useRoutes, useRedirect } from 'hookrouter';
 
 // Gives a plugin the ability to register routes.
 export function getRoutingCapabilities() {
   const routes = {};
+  const redirects = [];
   const routingCapabilities = {
     routes,
-    registerRoute(path, Comp, LazyLoadingFallback) {
+    redirects,
+    registerRoute(path, To, LazyLoadingFallback) {
       if (routes[path]) {
         throw Error('Route path already registered: ', path);
       }
-
-      routes[path] = args => (
-        <React.Suspense fallback={LazyLoadingFallback || 'Loading..'}>
-          <Comp {...args} />
-        </React.Suspense>
-      );
+      routes[path] = fromRouter => fromProps => {
+        console.log(fromRouter, fromProps);
+        return (
+          <React.Suspense fallback={LazyLoadingFallback || 'Loading..'}>
+            <To {...fromRouter} {...fromProps} />
+          </React.Suspense>
+        );
+      };
     },
-    Router() {
-      return useRoutes(routes) || 'nothing here 404 or sumthing......';
+    registerRedirect(from, to) {
+      redirects.push({ from, to });
+    },
+    Router(props) {
+      redirects.forEach(r => useRedirect(r.from, r.to));
+      return useRoutes(routes)(props) || 'nothing here 404 or sumthing......';
     },
   };
 

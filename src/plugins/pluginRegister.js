@@ -3,11 +3,12 @@ export { default as about } from '/plugins/about/about.plugin';
 export { default as service } from '/plugins/service/service.plugin';
 export {
   default as serviceOverview,
-} from '/plugins/service/plugins/service-overview/service-overview.plugin';
+} from '/plugins/service-overview/service-overview.plugin';
+export { default as capacity } from '/plugins/capacity/capacity.plugin';
+export { default as website } from '/plugins/website/website.plugin';
 export {
-  default as capacity,
-} from '/plugins/service/plugins/capacity/capacity.plugin';
-
+  default as websiteOverview,
+} from '/plugins/website-overview/website-overview.plugin';
 /*
 plugins
 

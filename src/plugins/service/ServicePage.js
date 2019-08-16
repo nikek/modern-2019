@@ -1,13 +1,14 @@
 import React from 'react';
 import { Router as ServiceRouter } from '/plugins/service/serviceRouter';
 import ServiceNav from './ServiceNav';
+import NeedId from '/shared/components/NeedId';
 
-export default function ServicePage() {
+export default function ServicePage({ id }) {
   return (
     <div>
       <h2>Layout</h2>
-      <ServiceNav />
-      <ServiceRouter />
+      <ServiceNav id={id} />
+      {id ? <ServiceRouter id={id} /> : <NeedId />}
     </div>
   );
 }
