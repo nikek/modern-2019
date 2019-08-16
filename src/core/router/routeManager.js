@@ -1,18 +1,26 @@
 import React from 'react';
+import { useRoutes } from 'hookrouter';
 
-export function makeRoutable(plugin) {
+// Gives a plugin the ability to register routes.
+export function getRoutingCapabilities() {
   const routes = {};
-  return Object.assign({}, plugin, {
+  const routingCapabilities = {
     routes,
-    registerRoute(path, Comp) {
+    registerRoute(path, Comp, LazyLoadingFallback) {
       if (routes[path]) {
         throw Error('Route path already registered: ', path);
       }
-      routes[path] = () => (
-        <React.Suspense fallback={'loading'}>
-          <Comp />
+
+      routes[path] = args => (
+        <React.Suspense fallback={LazyLoadingFallback || 'Loading..'}>
+          <Comp {...args} />
         </React.Suspense>
       );
     },
-  });
+    Router() {
+      return useRoutes(routes) || 'nothing here 404 or sumthing......';
+    },
+  };
+
+  return routingCapabilities;
 }

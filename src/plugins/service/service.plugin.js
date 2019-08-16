@@ -1,17 +1,10 @@
 import React from 'react';
-import { useRoutes } from 'hookrouter';
-import { makeRoutable } from '/core/router/routeManager';
+import { registerRoute } from '/core/app/appRouter';
 
 const ServicePage = React.lazy(() => import('/plugins/service/ServicePage'));
 
-const plugin = makeRoutable({
-  init(app) {
-    app.registerRoute('/service*', ServicePage);
+export default {
+  init() {
+    registerRoute('/service*', ServicePage);
   },
-});
-
-export default plugin;
-
-export const ServiceRouter = () => {
-  return useRoutes(plugin.routes) || 'service: nothing here';
 };

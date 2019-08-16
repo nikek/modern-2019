@@ -1,5 +1,5 @@
 import React from 'react';
-import { ServiceRouter } from '/plugins/service/service.plugin';
+import { Router as ServiceRouter } from '/plugins/service/serviceRouter';
 import ServiceNav from './ServiceNav';
 
 export default function ServicePage() {
