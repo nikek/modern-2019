@@ -1,12 +1,11 @@
 import React from 'react';
-import Nav from './Nav';
-import { Router as AppRouter } from '/core/app/appRouter'; // because JSX will not parse a lowercase variable correctly
+import AppBar from './AppBar';
+import { Router as AppRouter } from '/core/app/appRouter';
 
 export default function App() {
   return (
     <>
-      <h1>The App</h1>
-      <Nav />
+      <AppBar />
       <AppRouter />
     </>
   );

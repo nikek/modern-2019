@@ -1,0 +1,14 @@
+.appbar {
+  display: flex;
+  align-items: center;
+
+  height: 40px;
+  background: #212121;
+  overflow: hidden;
+}
+
+.appbar img {
+  mix-blend-mode: invert;
+  height: 30px;
+  margin-top: -7px;
+}
