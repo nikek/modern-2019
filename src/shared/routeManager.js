@@ -13,7 +13,6 @@ export function getRoutingCapabilities() {
         throw Error('Route path already registered: ', path);
       }
       routes[path] = fromRouter => fromProps => {
-        console.log(fromRouter, fromProps);
         return (
           <React.Suspense fallback={LazyLoadingFallback || 'Loading..'}>
             <To {...fromRouter} {...fromProps} />

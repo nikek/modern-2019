@@ -1,12 +1,12 @@
 import React from 'react';
 import AppBar from './AppBar';
-import { Router as AppRouter } from '/core/app/appRouter';
+import { AppProvider, Router as AppRouter } from '/app/app.plugin';
 
 export default function App() {
   return (
-    <>
+    <AppProvider>
       <AppBar />
       <AppRouter />
-    </>
+    </AppProvider>
   );
 }

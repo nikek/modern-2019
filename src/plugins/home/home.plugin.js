@@ -1,5 +1,5 @@
 import HomePage from './HomePage';
-import { registerRoute } from '/core/app/appRouter';
+import { registerRoute } from '/app/app.plugin';
 
 export default {
   init() {

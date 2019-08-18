@@ -1,6 +1,5 @@
 import React from 'react';
-import { registerRoute } from '/core/app/appRouter';
-import { registerRedirect } from '/core/app/appRouter';
+import { registerRoute, registerRedirect } from '/app/app.plugin';
 
 const WebsitePage = React.lazy(() => import('/plugins/website/WebsitePage'));
 

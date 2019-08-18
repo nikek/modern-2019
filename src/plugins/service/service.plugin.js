@@ -1,5 +1,5 @@
 import React from 'react';
-import { registerRoute, registerRedirect } from '/core/app/appRouter';
+import { registerRoute, registerRedirect } from '/app/app.plugin';
 
 const ServicePage = React.lazy(() => import('/plugins/service/ServicePage'));
 

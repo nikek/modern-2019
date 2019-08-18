@@ -1,4 +1,4 @@
-import { getRoutingCapabilities } from '/core/router/routeManager';
+import { getRoutingCapabilities } from '/shared/routeManager';
 
 export const {
   registerRoute,

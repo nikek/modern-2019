@@ -1,1 +1,3 @@
-import '/core/core.js';
+import app from '/app/app.plugin';
+
+app.init();

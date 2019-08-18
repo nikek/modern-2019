@@ -9,6 +9,8 @@ export { default as website } from '/plugins/website/website.plugin';
 export {
   default as websiteOverview,
 } from '/plugins/website-overview/website-overview.plugin';
+export { default as apollo } from '/plugins/apollo/apollo.plugin';
+
 /*
 plugins
 

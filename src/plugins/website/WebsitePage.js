@@ -5,7 +5,6 @@ import { Router as WebsiteRouter } from '/plugins/website/websiteRouter';
 import NeedId from '/shared/components/NeedId';
 
 export default function WebsitePage({ id }) {
-  console.log('webpage', id, typeof id);
   return (
     <>
       <h2>Website Layoutz</h2>
