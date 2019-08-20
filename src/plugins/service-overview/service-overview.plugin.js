@@ -1,5 +1,5 @@
 import React from 'react';
-import { registerRoute } from '/plugins/service/serviceRouter';
+import { registerRoute } from '/plugins/service/service.plugin';
 const ServiceOverviewPage = React.lazy(() =>
   import('/plugins/service-overview/ServiceOverviewPage')
 );

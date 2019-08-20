@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router as ServiceRouter } from '/plugins/service/serviceRouter';
+import { Router as ServiceRouter } from '/plugins/service/service.plugin';
 import ServiceNav from './ServiceNav';
 import NeedId from '/shared/components/NeedId';
 
