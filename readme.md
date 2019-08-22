@@ -4,25 +4,33 @@ Awesome tools combined for the current time
 
 ## Areas
 
-- Views - React
-  View layer presenting data and UI to users and handling interactions from users.
+- UI - React
+  UI layer presenting navigation and data, plus orchestrating user interaction.
 - Routing - hookrouter
   https://github.com/Paratron/hookrouter
 - Styling - emotion
-  emotion styled components and makeStyles -> useStyle hook
-- Bundling - TBD
-  - webpack
-  - cra
-  - parcel
-  - pika
+  emotion styled components and makeStyles -> useStyle hook ... maybe, tbd
+- Bundling - parcel
+  Dev server and building static site
 
-## General preferences
+## Ideas for this project
 
-- Prefer putting business logic in a js module. Much logic is tied to data that is required to be in the react sync cycles/lifecycles.
+- Prefer putting business logic in a js module. Though much logic is tied to data that is required to be in the react sync cycles/lifecycles.
+- This is a plugin architecture playground. APIs change and code moves around with every commit.
 
-## Not in phase one
+## Topics for phase one
 
+- What's in core vs in plugins
+- Routing
+  - Code splitting with lazy loading page components
+- State management
+- Authentication and user
+- Testing
+
+## Upcoming phases, maybe
+
+- Instrumentation, metrics and insights
+  events to hook into for tracking usage
 - Typescript
 - Server side rendering
-- Code splitting with lazy loading page components
 - Service workers - caching and offline
