@@ -1,22 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import context from '/app/context.js';
 import App from '/app/components/App';
 import * as plugins from '/plugins/pluginRegister';
-import { getProviderCapabilities } from '/shared/providerManager';
-import { getRoutingCapabilities } from '/shared/routeManager';
-
-export const { registerProvider, AppProvider } = getProviderCapabilities();
-
-export const {
-  registerRoute,
-  registerRedirect,
-  Router,
-} = getRoutingCapabilities();
 
 export default {
-  init() {
-    Object.values(plugins).forEach(p => p.init());
+  start() {
+    // setup context
 
+    // initialize all plugins
+    Object.values(plugins).forEach(p => p.init(context));
+
+    // check setup
+    const routeOrphans = context.router.areThereRouteOrphansLeft('app');
+    if (routeOrphans) {
+      console.log(routeOrphans);
+      throw new Error(
+        'Some route(s) have been registered to a sub router that does not exist'
+      );
+    }
+
+    // render
     ReactDOM.render(<App />, document.getElementById('app-root'));
   },
 };

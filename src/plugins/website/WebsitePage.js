@@ -1,7 +1,9 @@
 import React from 'react';
 import WebsiteNav from '/plugins/website/WebsiteNav';
-import { Router as WebsiteRouter } from '/plugins/website/website.plugin';
 import NeedId from '/shared/components/NeedId';
+import context from '/app/context';
+
+const WebsiteRouter = context.router.subRoute('website').Router;
 
 export default function WebsitePage({ id }) {
   return (

@@ -22,7 +22,7 @@ export default function ServiceOverviewPage({ id }) {
       Hejsan
       <ul>
         {data.user.components.map(c => (
-          <li>{c.id}</li>
+          <li key={c.id}>{c.id}</li>
         ))}
       </ul>
     </article>

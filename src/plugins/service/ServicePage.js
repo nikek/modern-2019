@@ -1,7 +1,9 @@
 import React from 'react';
-import { Router as ServiceRouter } from '/plugins/service/service.plugin';
 import ServiceNav from './ServiceNav';
 import NeedId from '/shared/components/NeedId';
+import context from '/app/context';
+
+const ServiceRouter = context.router.subRoute('service').Router;
 
 export default function ServicePage({ id }) {
   return (

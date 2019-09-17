@@ -1,6 +1,5 @@
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { registerProvider } from '/app/app.plugin';
 import config from '/config.json';
 
 const client = new ApolloClient({
@@ -8,7 +7,7 @@ const client = new ApolloClient({
 });
 
 export default {
-  init() {
-    registerProvider(ApolloProvider, { client });
+  init({ providers }) {
+    providers.registerProvider(ApolloProvider, { client });
   },
 };
