@@ -10,6 +10,7 @@ export {
   default as websiteOverview,
 } from '/plugins/website-overview/website-overview.plugin';
 export { default as apollo } from '/plugins/apollo/apollo.plugin';
+export { default as googleAuth } from '/plugins/googleAuth/googleAuth.plugin';
 
 /*
 plugins
